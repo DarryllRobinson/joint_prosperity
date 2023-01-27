@@ -1,13 +1,17 @@
-import { Container } from '@mui/material';
+import { Container, CssBaseline } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-//import SidePanel from './components/SidePanel';
 import ResponsiveDrawer from './components/ResponsiveDrawer';
 
+const theme = createTheme();
+
 function App() {
-  return (
-    <Container style={{ border: "1px solid black" }}>
+  return (<ThemeProvider theme={theme}>
+    <CssBaseline />
+    <Container maxWidth="lg">
       <ResponsiveDrawer />
     </Container>
+  </ThemeProvider>
   );
 }
 

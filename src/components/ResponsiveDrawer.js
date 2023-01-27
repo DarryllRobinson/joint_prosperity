@@ -21,7 +21,7 @@ import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-import chiro from "../assets/images/chiro.jpeg";
+import Introduction from './Introduction';
 
 const drawerWidth = 200;
 
@@ -151,9 +151,7 @@ export default function ResponsiveDrawer(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
-                <img
-                    src={chiro}
-                    alt="chiro image" />
+                <Introduction />
             </Box>
         </Box>
     );
