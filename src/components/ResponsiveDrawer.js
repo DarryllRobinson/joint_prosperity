@@ -1,32 +1,14 @@
 import * as React from 'react';
 import {
-    AppBar,
     Box,
     CssBaseline,
-    Divider,
     Drawer,
-    IconButton,
-    List,
-    ListItem,
-    ListItemButton,
-    ListItemIcon,
-    ListItemText,
     Toolbar,
-    Typography
 } from '@mui/material';
-
-import {
-    CalendarMonth,
-    FiberNew,
-    Map,
-    MedicalInformation,
-    Menu,
-    Phone
-} from '@mui/icons-material';
-
 
 import Introduction from './Introduction';
 import SideMenu from './SideMenu';
+import Header from './Header';
 
 const drawerWidth = 200;
 
@@ -43,32 +25,11 @@ export default function ResponsiveDrawer(props) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar
-                position="fixed"
-                sx={{
-                    ml: { sm: `${drawerWidth}px` },
-                    zIndex: (theme) => theme.zIndex.drawer + 1
-                }}
-            >
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' } }}
-                    >
-                        <Menu />
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        Joint Prosperity
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+            <Header handleDrawerToggle={handleDrawerToggle} drawerWidth={drawerWidth} />
             <Box
                 component="nav"
                 sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-                aria-label="mailbox folders"
+                aria-label="sidebar menu"
             >
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
                 <Drawer
