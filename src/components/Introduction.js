@@ -13,7 +13,7 @@ export default function Introduction() {
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    height="240"
+                    sx={{ width: 100 }}
                     image={helen}
                     alt="Helen Digby"
                 />
