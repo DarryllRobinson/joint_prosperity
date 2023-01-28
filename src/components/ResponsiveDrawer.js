@@ -1,27 +1,32 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
-import MapIcon from '@mui/icons-material/Map';
-import PhoneIcon from '@mui/icons-material/Phone';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import FiberNewIcon from '@mui/icons-material/FiberNew';
-import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import {
+    AppBar,
+    Box,
+    CssBaseline,
+    Divider,
+    Drawer,
+    IconButton,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText,
+    Toolbar,
+    Typography
+} from '@mui/material';
+
+import {
+    CalendarMonth,
+    FiberNew,
+    Map,
+    MedicalInformation,
+    Menu,
+    Phone
+} from '@mui/icons-material';
+
 
 import Introduction from './Introduction';
+import SideMenu from './SideMenu';
 
 const drawerWidth = 200;
 
@@ -32,60 +37,6 @@ export default function ResponsiveDrawer(props) {
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
-
-    const DisplayIcon = (text) => {
-        var icon;
-
-        switch (text) {
-            case 'Book Appt':
-                icon = <CalendarMonthIcon />;
-                break;
-            case 'First Visit':
-                icon = <FiberNewIcon />;
-                break;
-            case 'Location':
-                icon = <MapIcon />;
-                break;
-            case 'Services':
-                icon = <MedicalInformationIcon />;
-                break;
-            default:
-                break;
-        }
-        return icon;
-    };
-
-    const drawer = (
-        <div>
-            <Toolbar />
-            <Divider />
-            <List>
-                {['Book Appt', 'First Visit', 'Location', 'Services'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {DisplayIcon(text)}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
-            <Divider />
-            <List>
-                {['0411 111 111', 'Location'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <PhoneIcon /> : <MapIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
-        </div>
-    );
 
     const container = window !== undefined ? () => window().document.body : undefined;
 
@@ -107,7 +58,7 @@ export default function ResponsiveDrawer(props) {
                         onClick={handleDrawerToggle}
                         sx={{ mr: 2, display: { sm: 'none' } }}
                     >
-                        <MenuIcon />
+                        <Menu />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
                         Joint Prosperity
@@ -133,7 +84,7 @@ export default function ResponsiveDrawer(props) {
                         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
                     }}
                 >
-                    {drawer}
+                    <SideMenu />
                 </Drawer>
                 <Drawer
                     variant="permanent"
@@ -143,7 +94,7 @@ export default function ResponsiveDrawer(props) {
                     }}
                     open
                 >
-                    {drawer}
+                    <SideMenu />
                 </Drawer>
             </Box>
             <Box
