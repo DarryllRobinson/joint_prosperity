@@ -4,6 +4,6 @@ import ResponsiveDrawer from './ResponsiveDrawer';
 
 export default function Main() {
     return (
-        < ResponsiveDrawer />
+        <div>Main</div>
     );
 }

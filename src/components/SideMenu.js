@@ -1,4 +1,3 @@
-
 import {
     Divider,
     List,
@@ -16,6 +15,8 @@ import {
     MedicalInformation,
     Phone
 } from '@mui/icons-material';
+
+import Link from './components/Link'
 
 function DisplayIcon(text) {
     var icon;
