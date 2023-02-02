@@ -16,7 +16,7 @@ import {
     Phone
 } from '@mui/icons-material';
 
-import Link from './components/Link'
+import Link from './Link'
 
 function DisplayIcon(text) {
     var icon;
